@@ -27,6 +27,9 @@ jobs:
 
     - name: Change ownership of build directory
       run: docker exec -t arch-container chown -R nobody:nobody /home/build
+      
+    - name: Remove conflicting packages (optional)
+      run: docker exec -t arch-container pacman -R --noconfirm iptables
 
     - name: Install package dependencies
       run: docker exec -t arch-container pacman -S --noconfirm kubelet kubeadm cri-o crun open-iscsi nfs-utils libcrossguid nvme-cli
