@@ -5,7 +5,7 @@ pkgdesc="My k8s Setup"
 arch=('x86_64' 'aarch64')
 url="https://sfxworks.net"
 license=('GPL')
-depends=('kubelet' 'kubeadm' 'crio' 'crun' 'open-iscsi' 'nfs-utils' 'libcrossguid' 'nvme-cli')
+depends=('kubelet' 'kubeadm' 'cri-o' 'crun' 'open-iscsi' 'nfs-utils' 'libcrossguid' 'nvme-cli')
 install=$pkgname.install
 
 package() {
