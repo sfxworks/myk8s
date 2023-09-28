@@ -29,7 +29,7 @@ jobs:
       run: docker exec -t arch-container chown -R nobody:nobody /home/build
 
     - name: Install package dependencies
-      run: docker exec -t arch-container pacman -S --noconfirm kubelet kubeadm cri-o crun open-iscsi nfs-utils libcrossguid nvme-cli
+      run: docker exec -t arch-container pacman -S --noconfirm kubelet kubeadm cri-o crun open-iscsi nfs-utils libcrossguid nvme-cli --noconfirm
 
     - name: Build the package
       run: docker exec -t arch-container su nobody -s /bin/bash -c "cd /home/build && makepkg -s"
